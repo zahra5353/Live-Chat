@@ -16,13 +16,14 @@ import {
 
 // 2.konfigurasi firebase 
 const firebaseConfig = {
-  apiKey: "AIzaSyAk8Sxpz4YgDpQDW_G16syA7MTOUwu9dJM",
-  authDomain: "uasgenap2026-4c825.firebaseapp.com",
-  projectId: "uasgenap2026-4c825",
-  storageBucket: "uasgenap2026-4c825.firebasestorage.app",
-  messagingSenderId: "374262431493",
-  appId: "1:374262431493:web:7714c207c50c34b2d6016c"
-}
+  apiKey: "AIzaSyB9k7YSiBwlbq8cxZhIvBkv7VYP5QcdkSA",
+  authDomain: "rpl2528-72566.firebaseapp.com",
+  projectId: "rpl2528-72566",
+  storageBucket: "rpl2528-72566.firebasestorage.app",
+  messagingSenderId: "348805409081",
+  appId: "1:348805409081:web:313dba8f14935bcd6be0e8"
+};
+
 
 // 3.insialisasi firebase dan firestore
 const app = initializeApp(firebaseConfig)
@@ -30,37 +31,37 @@ const db = getFirestore(app)
 const messagesCollection = collection(db, "message")
 
 // array yg berisi daftar URL stiker
-  const daftarStiker = [
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Grinning%20face/3D/grinning_face_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Face%20with%20tears%20of%20joy/3D/face_with_tears_of_joy_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Rolling%20on%20the%20floor%20laughing/3D/rolling_on_the_floor_laughing_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Beaming%20face%20with%20smiling%20eyes/3D/beaming_face_with_smiling_eyes_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Grinning%20squinting%20face/3D/grinning_squinting_face_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Smiling%20face%20with%20heart-eyes/3D/smiling_face_with_heart_eyes_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Star-struck/3D/star-struck_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Face%20blowing%20a%20kiss/3D/face_blowing_a_kiss_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Smiling%20face%20with%20hearts/3D/smiling_face_with_hearts_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Smiling%20face%20with%20sunglasses/3D/smiling_face_with_sunglasses_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Zany%20face/3D/zany_face_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Face%20savoring%20food/3D/face_savoring_food_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Squinting%20face%20with%20tongue/3D/squinting_face_with_tongue_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Thinking%20face/3D/thinking_face_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Exploding%20head/3D/exploding_head_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Face%20screaming%20in%20fear/3D/face_screaming_in_fear_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Flushed%20face/3D/flushed_face_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Crying%20face/3D/crying_face_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Loudly%20crying%20face/3D/loudly_crying_face_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Angry%20face/3D/angry_face_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Face%20with%20symbols%20on%20mouth/3D/face_with_symbols_on_mouth_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Thumbs%20up/3D/thumbs_up_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Thumbs%20down/3D/thumbs_down_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Clapping%20hands/3D/clapping_hands_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Victory%20hand/3D/victory_hand_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Folded%20hands/3D/folded_hands_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Red%20heart/3D/red_heart_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Fire/3D/fire_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Party%20popper/3D/party_popper_3d.png",
-    "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Collision/3D/collision_3d.png"
+const daftarStiker = [
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Grinning%20face/3D/grinning_face_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Face%20with%20tears%20of%20joy/3D/face_with_tears_of_joy_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Rolling%20on%20the%20floor%20laughing/3D/rolling_on_the_floor_laughing_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Beaming%20face%20with%20smiling%20eyes/3D/beaming_face_with_smiling_eyes_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Grinning%20squinting%20face/3D/grinning_squinting_face_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Smiling%20face%20with%20heart-eyes/3D/smiling_face_with_heart_eyes_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Star-struck/3D/star-struck_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Face%20blowing%20a%20kiss/3D/face_blowing_a_kiss_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Smiling%20face%20with%20hearts/3D/smiling_face_with_hearts_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Smiling%20face%20with%20sunglasses/3D/smiling_face_with_sunglasses_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Zany%20face/3D/zany_face_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Face%20savoring%20food/3D/face_savoring_food_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Squinting%20face%20with%20tongue/3D/squinting_face_with_tongue_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Thinking%20face/3D/thinking_face_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Exploding%20head/3D/exploding_head_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Face%20screaming%20in%20fear/3D/face_screaming_in_fear_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Flushed%20face/3D/flushed_face_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Crying%20face/3D/crying_face_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Loudly%20crying%20face/3D/loudly_crying_face_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Angry%20face/3D/angry_face_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Face%20with%20symbols%20on%20mouth/3D/face_with_symbols_on_mouth_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Thumbs%20up/3D/thumbs_up_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Thumbs%20down/3D/thumbs_down_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Clapping%20hands/3D/clapping_hands_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Victory%20hand/3D/victory_hand_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Folded%20hands/3D/folded_hands_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Red%20heart/3D/red_heart_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Fire/3D/fire_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Party%20popper/3D/party_popper_3d.png",
+  "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Collision/3D/collision_3d.png"
 ]
 // Menemukan elemen-elemen DOM yang diperlukan 
 const chatForm = document.getElementById("chat-form")
@@ -73,20 +74,25 @@ const tombolStiker = document.getElementById("tombol-stiker")
 
 // Render popup stiker
 daftarStiker.forEach((url) => {
-// buat elemen img untuk setiap stiker
-const img = document.createElement("img")
-// menentukan sumber gambar stiker dari url
-img.src = url
-// menambah nama class pilihan-dtiker
-img.classList.add("pilihan-stiker")
-
-// menyembunyikan gambar yg tidak tersedia (URL salah)
-img.onerror = () => {
-  img.stylr.display = "none"
-}
-
-// elemen img ditambahkan ke divDaftarStiker
-divDaftarStiker.appendChild(img)
+  // buat elemen img untuk setiap stiker
+  const img = document.createElement("img")
+  // menentukan sumber gambar stiker dari url
+  img.src = url
+  // menambah nama class pilihan-dtiker
+  img.classList.add("pilihan-stiker")
+  
+  // mengirim stiker ke firestore saat diklik
+  img.onclick = () => {
+    kirimStiker(url)
+  }
+  
+  // menyembunyikan gambar yg tidak tersedia (URL salah)
+  img.onerror = () => {
+    img.style.display = "none"
+  }
+  
+  // elemen img ditambahkan ke divDaftarStiker
+  divDaftarStiker.appendChild(img)
 })
 
 // menampilkan panel pemilih stiker saat tombol stiker diklik
@@ -94,6 +100,26 @@ tombolStiker.onclick = () => {
   // toggle class tersembunyi pada panel pilih stiker
   pemilihStiker.classList.toggle("tersembunyi")
 }
+// fungsi kirim stiker ke firestore
+async function kirimStiker(url) {
+  const username = usernameInput.value.trim()
+  
+  // sembunyikan panel pemilih stiker setelah memilih stiker
+  pemilihStiker.classList.add("tersembunyi")
+  
+  // mengirim ke firestore
+  try {
+    await addDoc(messagesCollection, {
+      username: username,
+      message: url,
+      waktu: serverTimestamp(),
+      tipe: "stiker"
+    })
+  } catch (error) {
+    console.log("Gagal mengirim stiker:", error)
+  }
+}
+
 // fitur kirim pesan 
 chatForm.addEventListener("submit", async (e) => {
   event.preventDefault()
@@ -131,15 +157,15 @@ onSnapshot(queryPesan, (snapshot) => {
     const waktu = data.waktu.toDate().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     
     // render pesan (memenggil fungdi renderPesan)
-    renderPesan(data.username, data.message, waktu)
+    renderPesan(data.username, data.message, waktu, data.tipe)
     
   })
   
-      // scroll chatBox ke bawah setiap kali ada pesan baru
-    chatBox.scrollTop = chatBox.scrollHeight
+  // scroll chatBox ke bawah setiap kali ada pesan baru
+  chatBox.scrollTop = chatBox.scrollHeight
 })
 
-function renderPesan(username, message, waktu) {
+function renderPesan(username, message, waktu, tipe = "texs") {
   // buat elemen untuk menampilkan pesan
   const messageDiv = document.createElement("div")
   
@@ -148,12 +174,21 @@ function renderPesan(username, message, waktu) {
   
   // memanggil fungdi staringToColor untuk mendapatkan warna berdasarkan username
   const warnaUser = stringToColor(username)
+  let isiPesan
+  
+  // jika tipe pesan adalah stiker, tampilkan gambar
+  if (tipe === "stiker") {
+    isiPesan = `<img src="${message}" alt="stiker" />`
+  } else {
+    // kalau bukan stiker
+    isiPesan = `<span>${message}</span>`
+  }
   
   // menambahkan konten pesan ke messageDiv
   messageDiv.innerHTML = `
   <div class="message-content">
   <strong style="color: ${warnaUser}">${username}</strong>
-  <span class="text">${message}</span>
+  ${isiPesan}
   </div>
   <span class="time">${waktu}</span>
 ` // backtock
@@ -171,5 +206,5 @@ function stringToColor(str) {
   }
   // Ambil nilai Hue 0 - 360, dengan Saturation 65% & Lightness 40% agar warna tetap kontras/jelas
   const hue = Math.abs(hash) % 360;
-  return `hsl(${hue}, 65%, 40%)`;
+  return `hsl(${hue}, 65%, 40%)`
 }
